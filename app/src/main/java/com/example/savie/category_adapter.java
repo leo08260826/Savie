@@ -43,10 +43,16 @@ public class category_adapter extends BaseAdapter {
         TextView topicView = (TextView)v.findViewById(R.id.category_listview_topic);
         ImageView imgView = (ImageView)v.findViewById(R.id.category_listview_img);
         ImageView pawView = (ImageView)v.findViewById(R.id.category_listview_paw);
+        ImageView set1View = (ImageView)v.findViewById(R.id.category_listview_set1);
+        ImageView set2View = (ImageView)v.findViewById(R.id.category_listview_set2);
+        ImageView set3View = (ImageView)v.findViewById(R.id.category_listview_set3);
 
         topicView.setText(topics[position]);
         imgView.setImageResource(imgs[position]);
         pawView.setImageResource(R.drawable.paw);
+        set1View.setImageResource(R.drawable.pencil);
+        set2View.setImageResource(R.drawable.recycle);
+        set3View.setImageResource(R.drawable.garbage);
 
         return v;
     }

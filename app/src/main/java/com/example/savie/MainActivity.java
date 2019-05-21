@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent category_activity =  new Intent(getApplicationContext(),CategoryActivity.class);
-                category_activity.putExtra("CATEGORY_ID",position);
+                category_activity.putExtra("CATEGORY",topics[position]);
                 startActivity(category_activity);
             }
         });

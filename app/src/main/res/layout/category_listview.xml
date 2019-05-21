@@ -22,29 +22,58 @@
 
     <ImageView
         android:id="@+id/category_listview_paw"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        app:layout_constraintEnd_toStartOf="@+id/category_listview_topic"
-        app:layout_constraintHorizontal_bias="0.173"
+        android:layout_marginTop="18dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/category_listview_img"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/category_listview_topic"
-        android:layout_width="287dp"
-        android:layout_height="49dp"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginRight="12dp"
         android:gravity="center_vertical"
         android:text="TextView"
         android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/category_listview_paw"
         app:layout_constraintTop_toBottomOf="@+id/category_listview_img" />
+
+    <ImageView
+        android:id="@+id/category_listview_set1"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/category_listview_set2"
+        app:layout_constraintTop_toBottomOf="@+id/category_listview_img"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/category_listview_set2"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/category_listview_set3"
+        app:layout_constraintTop_toBottomOf="@+id/category_listview_img"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/category_listview_set3"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/category_listview_img"
+        tools:srcCompat="@tools:sample/avatars" />
 </android.support.constraint.ConstraintLayout>
