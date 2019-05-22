@@ -133,6 +133,10 @@ public class AritcleItem {
         }
         return result;
     }
+    public void clearDatabase() {
+        String clearDBQuery = "DELETE FROM "+TABLE_NAME;
+        db.execSQL(clearDBQuery);
+    }
 
     public void sample(){
         Item item1 = new Item(0,"fruit","food","http://fruit.com",

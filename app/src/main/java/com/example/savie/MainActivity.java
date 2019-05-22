@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         category_listview = (ListView) findViewById(R.id.main_listview);
         topics = new String[]{"food","technology"};
         imgs = new int[]{R.drawable.food,R.drawable.tech};

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
@@ -32,11 +33,10 @@ public class CategoryActivity extends AppCompatActivity {
         if(DBitem.getCount()==0){
             DBitem.sample();
         }
-
         List<Item> items =DBitem.getAll();
 
-        names = new String[50];
-        img_shows = new int[50];
+        names = new String[20];
+        img_shows = new int[20];
         int k=0;
         for(int i =0;i<items.size();i++){
             if(items.get(i).getTopicname().equals(topic)){
