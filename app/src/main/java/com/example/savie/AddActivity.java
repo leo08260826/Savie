@@ -18,17 +18,30 @@ public class AddActivity extends AppCompatActivity {
     EditText tag1Input;
     EditText tag2Input;
 
+    String link_;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add);
 
+        Intent in = getIntent();
+        String receiveAction = in.getAction();
+        link_ = "https://default.com";
+        if(receiveAction.equals(Intent.ACTION_SEND)){
+            String receivedText = in.getStringExtra(Intent.EXTRA_TEXT);
+            if(receivedText != null){
+                link_ = receivedText;
+            }
+        }
+
         nameInput = (EditText)findViewById(R.id.input_name);
         topicnameInput = (RadioGroup)findViewById(R.id.input_topicname);
         linkInput = (EditText)findViewById(R.id.input_link);
         tag1Input = (EditText)findViewById(R.id.input_tag1);
         tag2Input = (EditText)findViewById(R.id.input_tag2);
+
+        linkInput.setText(link_);
 
         Button submitButton = (Button)findViewById(R.id.input_submit);
         submitButton.setOnClickListener(new View.OnClickListener() {
@@ -66,5 +79,10 @@ public class AddActivity extends AppCompatActivity {
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return true;
     }
 }
