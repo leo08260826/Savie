@@ -36,12 +36,14 @@ public class ArticleActivity extends AppCompatActivity {
                 ImageView imgView = (ImageView)findViewById(R.id.article_img);
                 TextView tag1View = (TextView)findViewById(R.id.article_tag1);
                 TextView tag2View = (TextView)findViewById(R.id.article_tag2);
+                TextView linkView = (TextView)findViewById(R.id.article_link);
 
                 nameView.setText(item.getName());
                 topicView.setText(item.getContent());
                 imgView.setImageResource((int)item.getImg());
                 tag1View.setText("#"+item.getTag1());
                 tag2View.setText("#"+item.getTag2());
+                linkView.setText(item.getLink());
 
             }
         }

@@ -10,7 +10,9 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,6 +25,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Intent in = getIntent();
+        String add_name = in.getStringExtra("ARTICLENAME");
+        if(add_name!=null){
+            showToast("Finishing adding " + add_name);
+        }
 
         category_listview = (ListView) findViewById(R.id.main_listview);
         topics = new String[]{"food","technology"};
@@ -36,6 +43,14 @@ public class MainActivity extends AppCompatActivity {
                 Intent category_activity =  new Intent(getApplicationContext(),CategoryActivity.class);
                 category_activity.putExtra("CATEGORY",topics[position]);
                 startActivity(category_activity);
+            }
+        });
+
+        Button addbtn = (Button)findViewById(R.id.button_add);
+        addbtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent add = new Intent(getApplicationContext(),AddActivity.class);
+                startActivity(add);
             }
         });
 
@@ -68,5 +83,8 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void showToast(String text){
+        Toast.makeText(MainActivity.this,text,Toast.LENGTH_LONG).show();
+    }
 
 }
