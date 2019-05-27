@@ -41,8 +41,18 @@ public class ArticleActivity extends AppCompatActivity {
                 nameView.setText(item.getName());
                 topicView.setText(item.getContent());
                 imgView.setImageResource((int)item.getImg());
-                tag1View.setText("#"+item.getTag1());
-                tag2View.setText("#"+item.getTag2());
+                if(item.getTag1().equals("")){
+                    tag1View.setText("");
+                }
+                else{
+                    tag1View.setText("#"+item.getTag1());
+                }
+                if(item.getTag2().equals("")){
+                    tag2View.setText("");
+                }
+                else{
+                    tag2View.setText("#"+item.getTag2());
+                }
                 linkView.setText(item.getLink());
 
             }

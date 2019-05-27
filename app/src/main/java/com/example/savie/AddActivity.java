@@ -26,14 +26,16 @@ public class AddActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add);
 
         Intent in = getIntent();
-        String receiveAction = in.getAction();
         link_ = "https://default.com";
-        if(receiveAction.equals(Intent.ACTION_SEND)){
-            String receivedText = in.getStringExtra(Intent.EXTRA_TEXT);
-            if(receivedText != null){
-                link_ = receivedText;
+        if(in.getAction()!=null){
+            if(in.getAction().equals(Intent.ACTION_SEND)){
+                String receivedText = in.getStringExtra(Intent.EXTRA_TEXT);
+                if(receivedText != null){
+                    link_ = receivedText;
+                }
             }
         }
+
 
         nameInput = (EditText)findViewById(R.id.input_name);
         topicnameInput = (RadioGroup)findViewById(R.id.input_topicname);
