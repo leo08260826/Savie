@@ -9,6 +9,8 @@
         android:roundIcon="@drawable/savieicon"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity android:name=".SearchActivity">
+        </activity>
         <activity android:name=".AddActivity">
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />

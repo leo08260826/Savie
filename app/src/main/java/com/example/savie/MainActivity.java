@@ -1,7 +1,6 @@
 package com.example.savie;
 
 import android.content.Intent;
-import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -51,6 +50,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent add = new Intent(getApplicationContext(),AddActivity.class);
                 startActivity(add);
+            }
+        });
+
+        Button searchbtn = (Button)findViewById(R.id.button_search);
+        searchbtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent search = new Intent(getApplicationContext(),SearchActivity.class);
+                startActivity(search);
             }
         });
 
