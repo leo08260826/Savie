@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Savie</string>
+    <string name="appwidget_text">Savie!</string>
+    <string name="configure">Choose your topic</string>
+    <string name="add_widget">Add shorcut</string>
 
 </resources>
