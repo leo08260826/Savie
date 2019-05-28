@@ -6,6 +6,13 @@ import android.support.v7.widget.Toolbar;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.Button;
+import android.view.View;
+import android.widget.Toast;
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.support.v4.app.NotificationCompat;
 
 import java.util.List;
 
@@ -32,5 +39,18 @@ public class Settings extends AppCompatActivity {
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        Button button = findViewById(R.id.button_notify);
+
+        button.setOnClickListener(this);
+
+    }
+    @Override
+    public void onClick(View v) {
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this,  "baba!")
+                .setSmallIcon(R.drawable.savieicon)
+                .setContentTitle("Savie Reminder")
+                .setContentText("Hey, there's is a article you must look back!")
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
     }
 }
