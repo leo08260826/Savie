@@ -69,9 +69,9 @@ public class AddActivity extends AppCompatActivity {
                 item = DBitem.insert(item);
                 items.add(item);
 
-                Intent main = new Intent(getApplicationContext(),MainActivity.class);
-                main.putExtra("ARTICLENAME",name);
-                startActivity(main);
+                Intent feedback = new Intent(getApplicationContext(),FeedbackActivity.class);
+                feedback.putExtra("ARTICLENAME",name);
+                startActivity(feedback);
             }
         });
 

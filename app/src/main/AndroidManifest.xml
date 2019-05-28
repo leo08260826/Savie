@@ -9,6 +9,8 @@
         android:roundIcon="@drawable/savieicon"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity android:name=".FeedbackActivity" android:theme="@style/PopTheme"></activity>
+
         <receiver android:name=".SavieWidget">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
@@ -24,7 +26,7 @@
                 <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
             </intent-filter>
         </activity>
-        <activity android:name=".SearchActivity"></activity>
+        <activity android:name=".SearchActivity" />
         <activity android:name=".AddActivity">
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />

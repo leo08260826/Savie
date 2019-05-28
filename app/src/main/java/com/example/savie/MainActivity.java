@@ -24,12 +24,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Intent in = getIntent();
-        String add_name = in.getStringExtra("ARTICLENAME");
-        if(add_name!=null){
-            showToast("Finishing adding " + add_name);
-        }
-
         category_listview = (ListView) findViewById(R.id.main_listview);
         topics = new String[]{"food","technology"};
         imgs = new int[]{R.drawable.food,R.drawable.tech};
@@ -90,8 +84,5 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void showToast(String text){
-        Toast.makeText(MainActivity.this,text,Toast.LENGTH_LONG).show();
-    }
 
 }
