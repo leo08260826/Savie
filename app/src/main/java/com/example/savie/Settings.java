@@ -1,5 +1,6 @@
 package com.example.savie;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -13,11 +14,19 @@ import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.NotificationManagerCompat;
 
 import java.util.List;
 
 public class Settings extends AppCompatActivity {
 
+    NotificationCompat.Builder builder = new NotificationCompat.Builder(this,  "baba!")
+            .setSmallIcon(R.drawable.savieicon)
+            .setContentTitle("Savie Reminder")
+            .setContentText("Hey, there's is a article you must look back!")
+            .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+    NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
+    
     @Override
     public boolean onSupportNavigateUp() {
         finish();
@@ -42,15 +51,15 @@ public class Settings extends AppCompatActivity {
 
         Button button = findViewById(R.id.button_notify);
 
-        button.setOnClickListener(this);
 
-    }
-    @Override
-    public void onClick(View v) {
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(this,  "baba!")
-                .setSmallIcon(R.drawable.savieicon)
-                .setContentTitle("Savie Reminder")
-                .setContentText("Hey, there's is a article you must look back!")
-                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+        button.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+
+
+                        // notificationId is a unique int for each notification that you must define
+                        notificationManager.notify(1, builder.build());
+            }
+        });
+
     }
 }

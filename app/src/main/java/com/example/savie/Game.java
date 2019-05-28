@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ListView;
+import android.widget.ImageView
 import java.util.List;
 
 public class Game extends AppCompatActivity {
@@ -23,17 +24,21 @@ public class Game extends AppCompatActivity {
 
         AritcleItem DBitem = new AritcleItem(getApplicationContext());
         List <Item> items = DBitem.getAll();
-        int size = items.size()
-        @Override
-        public boolean onSupportNavigateUp() {
-            finish();
-            return true;
-        }
+        int size = items.size();
+
+        ImageView s = (ImageView) findViewById(R.id.);
+        s.setY(number);
+        s.setX(number);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.main_toolbar);
         toolbar.setTitle("Game");
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return true;
     }
 }
