@@ -20,12 +20,8 @@ import java.util.List;
 
 public class Settings extends AppCompatActivity {
 
-    NotificationCompat.Builder builder = new NotificationCompat.Builder(this,  "baba!")
-            .setSmallIcon(R.drawable.savieicon)
-            .setContentTitle("Savie Reminder")
-            .setContentText("Hey, there's is a article you must look back!")
-            .setPriority(NotificationCompat.PRIORITY_DEFAULT);
-    NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
+    NotificationCompat.Builder builder;
+    NotificationManagerCompat notificationManager;
 
     @Override
     public boolean onSupportNavigateUp() {
@@ -37,6 +33,14 @@ public class Settings extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
+
+        builder = new NotificationCompat.Builder(this,  "baba!")
+                .setVibrate(new long[]{0,0})
+                .setSmallIcon(R.drawable.savieicon)
+                .setContentTitle("Savie Reminder")
+                .setContentText("Hey! There's is a article you must look back!")
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+        notificationManager = NotificationManagerCompat.from(this);
 
         ListView listView = (ListView)findViewById(R.id.settings_listview);
         String []list = new String[]{"Notification","Game Setting","Language","Privacy","Terms","Delete All Info"};

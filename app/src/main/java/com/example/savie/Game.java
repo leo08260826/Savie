@@ -15,23 +15,20 @@ import android.widget.ImageView;
 import java.util.List;
 
 public class Game extends AppCompatActivity {
-
-    ImageView A = (ImageView) findViewById(R.id.ThePudding);
+    ImageView A;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
-        AritcleItem DBitem = new AritcleItem(getApplicationContext());
-        List <Item> items = DBitem.getAll();
-        int size = items.size();
+//        AritcleItem DBitem = new AritcleItem(getApplicationContext());
+//        List <Item> items = DBitem.getAll();
 
-        ImageView s = (ImageView) findViewById(R.id.ThePudding);
+        A = (ImageView) findViewById(R.id.ThePudding);
 
-        s.setOnClickListener(new View.OnClickListener() {
+        A.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                A.setY(80);
-                A.setX(800);
+                A.setY(1500);
             }
         });
 

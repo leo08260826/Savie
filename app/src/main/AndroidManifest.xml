@@ -39,6 +39,7 @@
         <activity android:name=".ArticleActivity" />
         <activity android:name=".CategoryActivity" />
         <activity android:name=".Settings" />
+        <activity android:name=".Game" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -48,4 +49,5 @@
         </activity>
     </application>
 
+    <uses-permission android:name="android.permission.VIBRATE" />
 </manifest>
