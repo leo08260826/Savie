@@ -11,12 +11,12 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ListView;
-import android.widget.ImageView
+import android.widget.ImageView;
 import java.util.List;
 
 public class Game extends AppCompatActivity {
 
-
+    ImageView A = (ImageView) findViewById(R.id.ThePudding);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,9 +26,14 @@ public class Game extends AppCompatActivity {
         List <Item> items = DBitem.getAll();
         int size = items.size();
 
-        ImageView s = (ImageView) findViewById(R.id.);
-        s.setY(number);
-        s.setX(number);
+        ImageView s = (ImageView) findViewById(R.id.ThePudding);
+
+        s.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                A.setY(80);
+                A.setX(800);
+            }
+        });
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.main_toolbar);
         toolbar.setTitle("Game");
