@@ -30,7 +30,6 @@ public class CategoryActivity extends AppCompatActivity {
 
         article_listview = (GridView) findViewById(R.id.cate_listview);
         AritcleItem DBitem = new AritcleItem(getApplicationContext());
-        DBitem.clearDatabase();
         if(DBitem.getCount()==0){
             DBitem.sample();
         }
