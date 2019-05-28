@@ -26,7 +26,7 @@ public class Settings extends AppCompatActivity {
             .setContentText("Hey, there's is a article you must look back!")
             .setPriority(NotificationCompat.PRIORITY_DEFAULT);
     NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
-    
+
     @Override
     public boolean onSupportNavigateUp() {
         finish();
@@ -54,8 +54,6 @@ public class Settings extends AppCompatActivity {
 
         button.setOnClickListener(new View.OnClickListener() {
                     public void onClick(View v) {
-
-
                         // notificationId is a unique int for each notification that you must define
                         notificationManager.notify(1, builder.build());
             }
