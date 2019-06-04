@@ -1,34 +1,48 @@
 package com.example.savie;
 
-import android.content.Intent;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.GridView;
-import android.widget.ListView;
+import android.widget.Button;
 import android.widget.ImageView;
-import java.util.List;
+import android.widget.TextView;
 
 public class Game extends AppCompatActivity {
-    ImageView A;
+    ImageView[] puddings;
+    int now;
+    TextView Score;
+    TextView Number;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
-//        AritcleItem DBitem = new AritcleItem(getApplicationContext());
-//        List <Item> items = DBitem.getAll();
+        final ImageView pudding = (ImageView) findViewById(R.id.ThePudding);
+        Score = findViewById(R.id.ScoreText);
+        Number = findViewById(R.id.PuddingNumber);
+        now = 0;
+        puddings = new ImageView[5];
+        puddings[0] = (ImageView)findViewById(R.id.pudding0);
+        puddings[1] = (ImageView)findViewById(R.id.pudding1);
+        puddings[2] = (ImageView)findViewById(R.id.pudding2);
+        puddings[3] = (ImageView)findViewById(R.id.pudding3);
+        puddings[4] = (ImageView)findViewById(R.id.pudding4);
 
-        A = (ImageView) findViewById(R.id.ThePudding);
+        Button play = (Button)findViewById(R.id.play_btn);
 
-        A.setOnClickListener(new View.OnClickListener() {
+        play.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                A.setY(1500);
+                if(now <=4) {
+                    puddings[now].setY(2000 - now * 60 * 2);
+                    Score.setText(""+((now+1)*100));
+                    Number.setText(""+ (5-now-1));
+                    now++;
+                }
+                if(now == 5 ){
+                    pudding.setVisibility(View.INVISIBLE);
+                }
             }
         });
 
