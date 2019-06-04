@@ -30,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
 
         category_adapter adapter = new category_adapter(this,topics,imgs);
         category_listview.setAdapter(adapter);
+        category_listview.setDivider(null);
+        category_listview.setDividerHeight(0);
         category_listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

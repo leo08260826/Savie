@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/article_listview_img"
-        android:layout_width="170dp"
-        android:layout_height="170dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
@@ -19,15 +19,18 @@
 
     <TextView
         android:id="@+id/atricle_listview_text"
-        android:layout_width="170dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:background="#4AFFFFFF"
-        android:gravity="bottom|right"
+        android:background="#33000000"
+        android:gravity="bottom|left"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
         android:text="TextView"
-        android:textSize="30sp"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/article_listview_img"
         app:layout_constraintEnd_toEndOf="@+id/article_listview_img"
-        app:layout_constraintHorizontal_bias="0.421"
+        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="@+id/article_listview_img" />
 
 </android.support.constraint.ConstraintLayout>

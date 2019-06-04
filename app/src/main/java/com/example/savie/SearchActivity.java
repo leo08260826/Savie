@@ -119,8 +119,8 @@ public class SearchActivity extends AppCompatActivity {
     }
 
     public  void changeSearchResult(){
-        names = new String[10];
-        img_shows = new int[10];
+        String pre_names[] = new String[items.size()];
+        int pre_img_shows[] = new int[items.size()];
         int k=0;
         for(int i =0;i<items.size();i++){
             Item temp_item = items.get(i);
@@ -129,10 +129,17 @@ public class SearchActivity extends AppCompatActivity {
                     && temp_item.getTopicname().equals(search_topicname)
                     && (temp_item.getTag1().equals(search_tag) || temp_item.getTag2().equals(search_tag) || search_tag.equals(""))
             ) {
-                names[k] = items.get(i).getName();
-                img_shows[k] = (int) items.get(i).getImgshow();
+                pre_names[k] = items.get(i).getName();
+                pre_img_shows[k] = (int) items.get(i).getImgshow();
                 k++;
             }
+        }
+
+        names = new String[k];
+        img_shows = new int[k];
+        for(int i=0;i<k;i++){
+            names[i] = pre_names[i];
+            img_shows[i] = pre_img_shows[i];
         }
 
         article_adapter adapter = new article_adapter(this,names,img_shows);
